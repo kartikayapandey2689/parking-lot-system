@@ -1,25 +1,26 @@
-# Parking Lot System (Spring Boot)
+Setup
 
-Production-ready Parking Lot Management System implemented with Spring Boot, JPA, and H2 (dev).  
-Focus: modular design, transactions, concurrency protection, SOLID design.
+export GOOGLE_CLIENT_ID=xxxx
+export GOOGLE_CLIENT_SECRET=yyyy
+mvn spring-boot:run
 
-## Features
-- Park vehicle / generate ticket
-- Exit vehicle / pay / generate receipt
-- Admin APIs to add parking slots
-- Pessimistic locking to avoid double allocation
-- Transactional entry/exit flows (atomic)
-- Validation and global exception handling
 
-## Tech stack
-- Java 17
-- Spring Boot 3.x
-- Spring Data JPA
-- H2 (development)
-- Maven
+API Endpoints
 
-## Quick start (dev)
-1. Clone:
-```bash
-git clone https://github.com/<you>/parking-lot-system.git
-cd parking-lot-system
+/api/parking/entry → Vehicle Entry
+
+/api/parking/exit → exit vehicle
+
+/auth/me → Check Logged-in User
+
+Authentication
+
+Uses Google OAuth2
+
+Add your Gmail in Test Users before running
+
+Postman Collection
+
+Import postman_collection.json
+
+Use OAuth2 tab to get token

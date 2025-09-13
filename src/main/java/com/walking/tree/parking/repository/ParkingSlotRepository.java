@@ -13,10 +13,9 @@ import java.util.List;
 
 public interface ParkingSlotRepository extends JpaRepository<ParkingSlot, Long> {
 
-    // Lock the rows when searching to avoid double allocation
     @Lock(LockModeType.PESSIMISTIC_WRITE)
-    @Query("SELECT s FROM ParkingSlot s WHERE s.type = :type AND s.status = :status ORDER BY s.distanceFromEntry ASC")
-    List<ParkingSlot> findByTypeAndStatusForUpdate(@Param("type") SlotType type, @Param("status") SlotStatus status);
+    @Query("SELECT s FROM ParkingSlot s WHERE s.slotType = :type AND s.status = 'AVAILABLE' ORDER BY s.distanceFromEntry ASC")
+    List<ParkingSlot> findAvailableSlotsForTypeWithLock(@Param("type") SlotType type);
 
-    List<ParkingSlot> findBySlotNumber(String slotNumber);
+    long countBySlotTypeAndStatus(SlotType type, SlotStatus status);
 }

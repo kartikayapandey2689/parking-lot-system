@@ -1,9 +1,6 @@
 package com.walking.tree.parking.controller;
 
-import com.walking.tree.parking.dto.EntryRequest;
-import com.walking.tree.parking.dto.EntryResponse;
-import com.walking.tree.parking.dto.ExitRequest;
-import com.walking.tree.parking.dto.ReceiptResponse;
+import com.walking.tree.parking.dto.*;
 import com.walking.tree.parking.service.ParkingService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -26,9 +23,13 @@ public class ParkingController {
         return ResponseEntity.ok(res);
     }
 
-    @PostMapping("/exit")
-    public ResponseEntity<ReceiptResponse> exit(@Valid @RequestBody ExitRequest req) {
-        ReceiptResponse res = parkingService.exitVehicle(req);
-        return ResponseEntity.ok(res);
+    @PostMapping("/exit/initiate")
+    public ResponseEntity<ExitInitiateResponse> exitInitiate(@Valid @RequestBody ExitRequest req) {
+        return ResponseEntity.ok(parkingService.initiateExit(req));
+    }
+
+    @PostMapping("/exit/pay")
+    public ResponseEntity<ReceiptResponse> payExit(@Valid @RequestBody PaymentRequest req) {
+        return ResponseEntity.ok(parkingService.payAndExit(req));
     }
 }
