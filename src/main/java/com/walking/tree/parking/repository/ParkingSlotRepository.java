@@ -1,6 +1,7 @@
 package com.walking.tree.parking.repository;
 
 import com.walking.tree.parking.entity.ParkingSlot;
+import com.walking.tree.parking.entity.enums.SlotStatus;
 import com.walking.tree.parking.entity.enums.SlotType;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
