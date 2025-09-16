@@ -51,7 +51,7 @@ You will use these in Postman and `application.yml`.
 
 ## ⚙️ Configure `application.yml`
 Configuration
-Copy `application-example.yml` to `application.yml` and update with your values:
+Copy `application-test.yml` to `application.yml` and update with your values:
 
 ```yaml
 spring:
