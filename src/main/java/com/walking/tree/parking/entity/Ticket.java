@@ -4,6 +4,7 @@ import com.walking.tree.parking.entity.enums.TicketStatus;
 import com.walking.tree.parking.entity.enums.VehicleType;
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 
 @Entity
@@ -21,16 +22,20 @@ public class Ticket {
     @ManyToOne(fetch = FetchType.LAZY)
     private ParkingSlot slot;
 
+    @ManyToOne
+    private EntryGate entryGate;
+
     private Instant entryTime;
 
     private Instant exitTime;
 
     @Enumerated(EnumType.STRING)
-    private TicketStatus status;
+    private TicketStatus status = TicketStatus.ACTIVE;
+
+    private BigDecimal amount;
 
     // getters/setters
     public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
     public String getVehiclePlate() { return vehiclePlate; }
     public void setVehiclePlate(String vehiclePlate) { this.vehiclePlate = vehiclePlate; }
     public VehicleType getVehicleType() { return vehicleType; }
@@ -43,4 +48,8 @@ public class Ticket {
     public void setExitTime(Instant exitTime) { this.exitTime = exitTime; }
     public TicketStatus getStatus() { return status; }
     public void setStatus(TicketStatus status) { this.status = status; }
+    public BigDecimal getAmount() { return amount; }
+    public void setAmount(BigDecimal amount) { this.amount = amount; }
+    public EntryGate getEntryGate() { return entryGate; }
+    public void setEntryGate(EntryGate entryGate) { this.entryGate = entryGate; }
 }

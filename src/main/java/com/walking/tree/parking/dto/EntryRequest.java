@@ -11,9 +11,22 @@ public class EntryRequest {
     @NotNull
     private VehicleType type;
 
+    @NotNull
+    private Long gateId;
+
     // getters/setters
-    public String getPlate() { return plate; }
-    public void setPlate(String plate) { this.plate = plate; }
-    public VehicleType getType() { return type; }
-    public void setType(VehicleType type) { this.type = type; }
+    public String getPlate() {
+        return plate;
+    }
+    public void setPlate(String plate) {
+        this.plate = plate;
+    }
+    public VehicleType getType() {
+        return type;
+    }
+    public void setType(VehicleType type) {
+        this.type = type;
+    }
+    public Long getGateId() { return gateId; }
+    public void setGateId(Long gateId) { this.gateId = gateId; }
 }
