@@ -79,7 +79,6 @@ logging:
 
 Run Application
 # Using Maven
-./mvnw spring-boot:run
 App runs at: http://localhost:8080
 
 Database (H2 Console)
