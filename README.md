@@ -32,7 +32,8 @@ This project demonstrates **clean code, SOLID principles, design patterns (Strat
 ## ⚙️ Setup & Run Locally
 
 ### 1. Clone Repo
-```bash
+
+---
 git clone https://github.com/kartikayapandey2689/parking-lot-system.git
 cd parking-lot-system
 
@@ -53,7 +54,7 @@ You will use these in Postman and `application.yml`.
 Configuration
 Copy `application-test.yml` to `application.yml` and update with your values:
 
-```yaml
+---
 spring:
   h2:
     console:
