@@ -81,7 +81,7 @@ Run Application
 # Using Maven
 App runs at: http://localhost:8080
 
-Database (H2 Console)
+# Database (H2 Console)
 
 URL: http://localhost:8080/h2-console
 JDBC URL: jdbc:h2:mem:testdb
@@ -89,7 +89,7 @@ Username: sa
 Password: (leave blank unless configured)
 
 
-Security & Roles
+# Security & Roles
 
 Authentication: Google OAuth2 (JWT validation)
 Roles:
@@ -100,7 +100,7 @@ Access rules:
 /api/parking/** → authenticated users
 /api/admin/** → admin users only
 
-Vehicle Entry
+# Vehicle Entry
 
 POST /api/parking/entry
 
@@ -109,16 +109,14 @@ POST /api/parking/entry
   "type": "CAR",
   "gateId": 1
 }
-
-2. Exit Initiate
+# Exit Initiate
 
 POST /api/parking/exit/initiate
 
 {
   "plate": "KA02AB1234"
 }
-
-3. Exit Pay
+# Exit Pay
 
 POST /api/parking/exit/pay
 
@@ -127,7 +125,7 @@ POST /api/parking/exit/pay
   "paymentMethod": "CASH"
 }
 
-4. Add Slot (Admin Only)
+# Add Slot (Admin Only)
 
 POST /api/admin/slot
 
@@ -137,7 +135,7 @@ POST /api/admin/slot
   "vehicleType": "CAR"
 }
 
-5. Get Logged-in User
+#Get Logged-in User
 
 GET /auth/me
 
